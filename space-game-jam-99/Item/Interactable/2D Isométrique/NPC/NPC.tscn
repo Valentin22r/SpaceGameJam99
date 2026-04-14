@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://j2i6up1g76r8"]
+
+[ext_resource type="Script" uid="uid://bg7ae2gitdx1o" path="res://Item/Interactable/2D Isométrique/NPC/npc.gd" id="1_i51mn"]
+[ext_resource type="Texture2D" uid="uid://bg2rawfa438uj" path="res://Asset/PNJ.png" id="2_o3rhs"]
+[ext_resource type="Texture2D" uid="uid://d1yltdqd24cax" path="res://Asset/E.jpg" id="3_gdqq4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i51mn"]
+radius = 5.02203
+
+[node name="Npc" type="Node3D" unique_id=551987921]
+script = ExtResource("1_i51mn")
+
+[node name="SpriteNpc" type="Sprite3D" parent="." unique_id=1446693102]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.6035397, 0)
+billboard = 2
+texture = ExtResource("2_o3rhs")
+
+[node name="InteractLogo" type="Sprite3D" parent="." unique_id=132220760]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.9437575, 0)
+visible = false
+billboard = 2
+texture = ExtResource("3_gdqq4")
+
+[node name="Area" type="Area3D" parent="." unique_id=252225220]
+collision_layer = 2
+
+[node name="Collision" type="CollisionShape3D" parent="Area" unique_id=1770896920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4809177, 0)
+shape = SubResource("SphereShape3D_i51mn")
+
+[node name="DialogueBubble" type="Sprite3D" parent="." unique_id=2084148063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8312323, 2.6911306, 9.536743e-07)
+billboard = 2
+
+[node name="DialogueText" type="Label3D" parent="DialogueBubble" unique_id=330827362]
+billboard = 2
+
+[connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
+[connection signal="area_exited" from="Area" to="." method="_on_area_area_exited"]

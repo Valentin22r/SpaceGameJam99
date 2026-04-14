@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cqafuycj575ep"]
+
+[ext_resource type="PackedScene" uid="uid://vwn5orut8wcm" path="res://Player/2D_isometrique/Player.tscn" id="1_ljpp0"]
+[ext_resource type="PackedScene" uid="uid://j2i6up1g76r8" path="res://Item/Interactable/2D Isométrique/NPC/NPC.tscn" id="2_hovyi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lkbuv"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljpp0"]
+size = Vector3(20, 1, 20)
+
+[node name="LevelTest" type="Node3D" unique_id=1468616145]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1109873953]
+collision_layer = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=787660625]
+mesh = SubResource("BoxMesh_lkbuv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=928342875]
+shape = SubResource("BoxShape3D_ljpp0")
+
+[node name="Player" parent="." unique_id=183590433 instance=ExtResource("1_ljpp0")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.8988743, 2.6189654, 2.937523)
+
+[node name="Npc" parent="." unique_id=551987921 instance=ExtResource("2_hovyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0523596, 0.5, -5.244308)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpygs3y81pjkj"]
+
+[ext_resource type="Texture2D" uid="uid://yl6qoqkvvdor" path="res://Asset/Chat.png" id="1_5ges3"]
+[ext_resource type="Script" uid="uid://cxq3ymmno7i8r" path="res://Item/Interactable/2D Isométrique/QuestItem/quest_item.gd" id="1_mqqcb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mqqcb"]
+radius = 2.0
+
+[node name="QuestItem" type="Area3D" unique_id=353342138]
+script = ExtResource("1_mqqcb")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=98555656]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_5ges3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=837190900]
+shape = SubResource("SphereShape3D_mqqcb")

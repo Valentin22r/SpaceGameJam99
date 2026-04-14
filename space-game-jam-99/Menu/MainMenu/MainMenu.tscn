@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cm6h83i0evol8"]
+
+[ext_resource type="Texture2D" uid="uid://c7kha12qbxfep" path="res://Asset/téléchargement.jpg" id="1_e1xpn"]
+[ext_resource type="Script" uid="uid://c1exr36je2vbh" path="res://Menu/MainMenu/main_menu.gd" id="1_swd6r"]
+
+[node name="MainMenu" type="Control" unique_id=1170862710]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swd6r")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1112667238]
+position = Vector2(576, 323.50003)
+scale = Vector2(3.7290323, 3.9815953)
+texture = ExtResource("1_e1xpn")
+
+[node name="Play" type="Button" parent="." unique_id=35806412]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -18.0
+offset_right = 94.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="." unique_id=368199275]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = 31.0
+offset_right = 94.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="." unique_id=194246141]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = 86.0
+offset_right = 94.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
