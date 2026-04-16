@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vwn5orut8wcm"]
 
 [ext_resource type="Script" uid="uid://b0tr3yh51wa6h" path="res://Player/2D_isometrique/player.gd" id="1_kh6ma"]
-[ext_resource type="Texture2D" uid="uid://cebx1kfpi066d" path="res://Asset/image-removebg-preview.png" id="2_sd2ff"]
+[ext_resource type="Texture2D" uid="uid://cebx1kfpi066d" path="res://Asset/2D/image-removebg-preview.png" id="2_sd2ff"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kh6ma"]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SpaceGame99Jam"
-run/main_scene="uid://c8wxaw38ei3gf"
+run/main_scene="uid://cm6h83i0evol8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]

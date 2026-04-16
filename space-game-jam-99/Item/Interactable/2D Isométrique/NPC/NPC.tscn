@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://j2i6up1g76r8"]
 
 [ext_resource type="Script" uid="uid://bg7ae2gitdx1o" path="res://Item/Interactable/2D Isométrique/NPC/npc.gd" id="1_i51mn"]
-[ext_resource type="Texture2D" uid="uid://bg2rawfa438uj" path="res://Asset/PNJ.png" id="2_o3rhs"]
-[ext_resource type="Texture2D" uid="uid://d1yltdqd24cax" path="res://Asset/E.jpg" id="3_gdqq4"]
+[ext_resource type="Texture2D" uid="uid://bg2rawfa438uj" path="res://Asset/2D/PNJ.png" id="2_o3rhs"]
+[ext_resource type="Texture2D" uid="uid://d1yltdqd24cax" path="res://Asset/2D/E.jpg" id="3_gdqq4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i51mn"]
 radius = 5.02203
