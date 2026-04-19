@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var SPEED = 5.0
+@export var JUMP_VELOCITY = 4.5
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -26,4 +26,3 @@ func _input(event: InputEvent) -> void:
 		$Sprite.flip_h = false
 	if event.is_action_pressed("move_right"):
 		$Sprite.flip_h = true
-	

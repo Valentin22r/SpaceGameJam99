@@ -2,25 +2,59 @@
 
 [ext_resource type="Script" uid="uid://b0tr3yh51wa6h" path="res://Player/2D_isometrique/player.gd" id="1_kh6ma"]
 [ext_resource type="Texture2D" uid="uid://cebx1kfpi066d" path="res://Asset/2D/image-removebg-preview.png" id="2_sd2ff"]
+[ext_resource type="Texture2D" uid="uid://dc86lalvm2ywg" path="res://Asset/Ui/UI_bouton.png" id="3_kh6ma"]
+[ext_resource type="Script" uid="uid://0ddvngnsiyge" path="res://Player/2D_isometrique/Ath.gd" id="3_u8h26"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kh6ma"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_sd2ff"]
+margin = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kh6ma"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_sd2ff"]
 
 [node name="Player" type="CharacterBody3D" unique_id=183590433]
 collision_mask = 4
 script = ExtResource("1_kh6ma")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=2079695634]
-shape = SubResource("BoxShape3D_kh6ma")
+shape = SubResource("SphereShape3D_sd2ff")
 
-[node name="Camera" type="Camera3D" parent="." unique_id=147789517]
-transform = Transform3D(1, 0, 0, 0, 0.77681637, 0.6297272, 0, -0.6297272, 0.77681637, 0, 5.2420845, 4.9292927)
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1989867490]
+transform = Transform3D(1, 0, 0, 0, 0.81834036, 0.5747339, 0, -0.5747339, 0.81834036, 0, 0, 0)
+collision_mask = 4
+spring_length = 8.0
+
+[node name="Camera" type="Camera3D" parent="SpringArm3D" unique_id=147789517]
+transform = Transform3D(1, 0, 0, 0, 0.9757757, -0.21877342, 0, 0.21877342, 0.9757757, 0, 0.026595592, 6.663925)
 
 [node name="Sprite" type="Sprite3D" parent="." unique_id=2080413932]
-transform = Transform3D(3, 0, 0, 0, 2.0595498, 2.1813421, 0, -2.1813421, 2.0595498, 0, 0.051804543, -0.22016108)
+transform = Transform3D(3, 0, 0, 0, 2.7401462, 1.2213098, 0, -1.2213098, 2.7401462, 0, 0.20799941, -0.22016108)
 texture = ExtResource("2_sd2ff")
 
 [node name="PlayerArea" type="Area3D" parent="." unique_id=507072966]
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape3D" parent="PlayerArea" unique_id=501279652]
-shape = SubResource("BoxShape3D_kh6ma")
+shape = SubResource("SphereShape3D_kh6ma")
+
+[node name="ATH" type="Node2D" parent="." unique_id=1696896512]
+script = ExtResource("3_u8h26")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ATH" unique_id=15073012]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(122.75, 28.75)
+scale = Vector2(246.5, 58.5)
+mesh = SubResource("QuadMesh_sd2ff")
+
+[node name="UiBouton" type="Sprite2D" parent="ATH" unique_id=564095336]
+position = Vector2(122.99999, 29)
+scale = Vector2(0.33791208, 0.26244342)
+texture = ExtResource("3_kh6ma")
+
+[node name="MoneyText" type="RichTextLabel" parent="ATH" unique_id=980806820]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 241.0
+offset_bottom = 53.0
+theme_override_font_sizes/normal_font_size = 31
+text = "test"

@@ -65,13 +65,17 @@ func _ready():
 # Fonctions argent
 # -------------------------
 
+signal money_changed
+
 func add_money(amount: int):
 	money += amount
 	save()
+	money_changed.emit()
 
 func remove_money(amount: int):
 	money = max(0, money - amount)
 	save()
+	money_changed.emit()
 
 func get_money() -> int:
 	return money

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvc8w65bo1wvm"
-path="res://.godot/imported/Radiateur_eteit.png-f4314dde11275439cdc7c94025edaa55.ctex"
+uid="uid://dmepu8gln8rcf"
+path="res://.godot/imported/Radiateur_allumer.png-7dbdcdc47076fbf75dc24aa618f3aa2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/2D/2D_Asset_Salamandre_radiateur_robinet/Radiateur_eteit.png"
-dest_files=["res://.godot/imported/Radiateur_eteit.png-f4314dde11275439cdc7c94025edaa55.ctex"]
+source_file="res://Asset/2D/Radiateur_allumer.png"
+dest_files=["res://.godot/imported/Radiateur_allumer.png-7dbdcdc47076fbf75dc24aa618f3aa2a.ctex"]
 
 [params]
 

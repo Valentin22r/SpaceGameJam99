@@ -22,11 +22,15 @@ enum QuestType { NONE, FIND_ITEM, INTERACT_OBJECT }
 # -----------------------------
 var player_in_area := false
 var target_object: Node = null
+var coin_given = false
 
 var before_index := 0
 var during_index := 0
 var after_index := 0
-var postquest_index := 0   # <-- AJOUT
+var postquest_index := 0
+
+@export var amount = 0
+@export var coin_amount = 0
 
 static var quest_state := {}    # { quest_index: {started, completed} }
 
@@ -90,9 +94,13 @@ func interact():
 
 	# APRÈS LA QUÊTE
 	if q["completed"]:
-		# Si les dialogues_after ne sont pas encore terminés
-		if after_index < dialogues_after.size():
-			var finished = show_dialogue(dialogues_after, "after")
+		# FIX : permettre d'atteindre les dialogues post-quest
+		if after_index < dialogues_after.size() - 1:
+			show_dialogue(dialogues_after, "after")
+			if coin_given == false :
+				GameData.add_money(coin_amount)
+				$CoinAudio.play()
+				coin_given = true
 			return
 
 		# Sinon → dialogues post-quest
@@ -117,12 +125,20 @@ func show_dialogue(list: Array[String], mode: String) -> bool:
 			index = during_index
 		"after":
 			index = after_index
-		"postquest":   # <-- AJOUT
+		"postquest":
 			index = postquest_index
 
 	index = clamp(index, 0, list.size() - 1)
 
-	$DialogueBubble/DialogueText.text = list[index]
+	var text := list[index]
+
+	# Ajout : afficher progression pour les quêtes d’objets
+	if mode == "during" and quest_type == QuestType.FIND_ITEM:
+		var current = PlayerInventory.get_item_count(target_item_name)
+		text = text.replace("{current}", str(current))
+		text = text.replace("{required}", str(amount))
+
+	$DialogueBubble/DialogueText.text = text
 	$DialogueBubble.show()
 
 	var finished := false
@@ -146,14 +162,13 @@ func show_dialogue(list: Array[String], mode: String) -> bool:
 			else:
 				finished = true
 
-		"postquest":   # <-- AJOUT
+		"postquest":
 			if postquest_index < list.size() - 1:
 				postquest_index += 1
 			else:
 				finished = true
 
 	return finished
-
 
 
 # -----------------------------
@@ -167,7 +182,7 @@ func start_quest():
 func check_quest_progress():
 	match quest_type:
 		QuestType.FIND_ITEM:
-			if player_has_item(target_item_name):
+			if player_has_items(target_item_name, amount):
 				complete_quest()
 
 		QuestType.INTERACT_OBJECT:
@@ -186,6 +201,5 @@ func complete_quest():
 # -----------------------------
 # INVENTAIRE (array d'items)
 # -----------------------------
-func player_has_item(item_name: String) -> bool:
-	var items = PlayerInventory.get_items()
-	return item_name in items
+func player_has_items(item_name: String, required_amount: int) -> bool:
+	return PlayerInventory.get_item_count(item_name) >= required_amount
