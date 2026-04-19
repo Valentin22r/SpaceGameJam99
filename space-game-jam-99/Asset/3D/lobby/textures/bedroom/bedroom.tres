@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://ci7vyg2n86v7a"]
+
+[ext_resource type="Texture2D" uid="uid://dmps6u67y6uub" path="res://Asset/3D/lobby/textures/bedroom/bedroom_openPBR_shader1_BaseColor.png" id="1_ps3cs"]
+[ext_resource type="Texture2D" uid="uid://dkopmhhg4f8yu" path="res://Asset/3D/lobby/textures/bedroom/bedroom_openPBR_shader1_OcclusionRoughnessMetallic.png" id="2_2hw0x"]
+[ext_resource type="Texture2D" uid="uid://bfnynxda7ckb3" path="res://Asset/3D/lobby/textures/bedroom/bedroom_openPBR_shader1_Normal.png" id="3_kfspl"]
+
+[resource]
+albedo_texture = ExtResource("1_ps3cs")
+normal_enabled = true
+normal_texture = ExtResource("3_kfspl")
+clearcoat_enabled = true
+clearcoat_texture = ExtResource("2_2hw0x")

@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bxigh1efkesbq"]
+
+[ext_resource type="Texture2D" uid="uid://bofuwwabxku0j" path="res://Asset/3D/lobby/textures/Sauge.png" id="1_q2xyg"]
+
+[resource]
+transparency = 4
+albedo_texture = ExtResource("1_q2xyg")

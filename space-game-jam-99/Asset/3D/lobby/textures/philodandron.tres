@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://dfwrp87jd4r5x"]
+
+[ext_resource type="Texture2D" uid="uid://bbokw8a3gxx7x" path="res://Asset/3D/lobby/textures/Philodendron.png" id="1_et3yt"]
+
+[resource]
+transparency = 4
+albedo_texture = ExtResource("1_et3yt")

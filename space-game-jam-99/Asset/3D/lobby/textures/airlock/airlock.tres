@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://wj4dsxjxuwln"]
+
+[ext_resource type="Texture2D" uid="uid://jjsgegbr54v" path="res://Asset/3D/lobby/textures/airlock/airlock_openPBR_shader1_BaseColor.png" id="1_5du01"]
+[ext_resource type="Texture2D" uid="uid://c4e6qoq3b4rec" path="res://Asset/3D/lobby/textures/airlock/airlock_openPBR_shader1_Normal.png" id="2_x74l5"]
+
+[resource]
+albedo_texture = ExtResource("1_5du01")
+normal_enabled = true
+normal_texture = ExtResource("2_x74l5")

@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c1uk0ybjcxhbx"]
+
+[ext_resource type="Texture2D" uid="uid://51cdfuj8nqdi" path="res://Asset/3D/lobby/textures/bathroom/bathroom_openPBR_shader1_BaseColor.png" id="1_1vci6"]
+[ext_resource type="Texture2D" uid="uid://cg16cc1tfw8qj" path="res://Asset/3D/lobby/textures/bathroom/bathroom_openPBR_shader1_Normal.png" id="2_xbmlw"]
+
+[resource]
+albedo_texture = ExtResource("1_1vci6")
+normal_enabled = true
+normal_texture = ExtResource("2_xbmlw")
